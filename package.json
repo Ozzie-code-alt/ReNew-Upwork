@@ -1,0 +1,40 @@
+{
+  "name": "re-new",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky && husky install"
+  },
+  "lint-staged": {
+    "*.{js, jsx,ts,tsx}": [
+      "eslint --quiet --fix"
+    ],
+    "*.{json,js,ts,jsx,tsx,html}": [
+      "prettier --write --ignore-unknown"
+    ]
+  },
+  "dependencies": {
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.7",
+    "postcss": "^8",
+    "prettier": "^3.3.2",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  },
+  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
+}
