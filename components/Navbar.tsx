@@ -54,7 +54,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function Navbar() {
   return (
-    <div className='border flex justify-between  bg-[#FFD966] px-10 rounded-md items-center  py-5'>
+    <div className='border flex justify-between  bg-[#FFD966] px-10 rounded-lg items-center  py-10'>
       <div>
         <NavigationMenu>
           <NavigationMenuList>
@@ -108,6 +108,9 @@ export function Navbar() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
+      </div>
+      <div>
+        <p className='text-4xl'>ReNew</p>
       </div>
       <div className='flex gap-5 items-center'>
         <div className=''>
