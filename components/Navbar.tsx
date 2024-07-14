@@ -54,7 +54,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function Navbar() {
   return (
-    <div className='border flex justify-between  bg-[#FFD966] px-10 rounded-lg items-center  py-10'>
+    <div className='border flex justify-between   bg-[#FFD966] px-10 rounded-lg items-center  py-10'>
       <div>
         <NavigationMenu>
           <NavigationMenuList>
