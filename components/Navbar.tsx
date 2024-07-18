@@ -117,7 +117,7 @@ export function Navbar() {
           <Input type='email' placeholder='Find in Store' />
         </div>
         <div className='cursor-pointer'>
-          <Link href={'/login'}>
+          <Link href={'/sign-up'}>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
