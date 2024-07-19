@@ -2,11 +2,30 @@
 import React, { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 const Login = () => {
   const [form, setForm] = useState({ email: '', password: '' });
-  const handleRegistrationForm = (e: React.FormEvent<HTMLElement>) => {
+  const router = useRouter();
+  const handleRegistrationForm = async (e: React.FormEvent<HTMLElement>) => {
     e.preventDefault();
+    try {
+      const signIn = await fetch('http://localhost:4000/api/user/signInUser', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          email: form.email,
+          hashedPassword: form.password
+        })
+      });
+
+      if (!signIn) {
+        console.log('Error Signing in');
+      }
+      console.log(signIn);
+      router.push('/');
+    } catch (error) {
+      console.log('Form Error', error);
+    }
     console.log(form);
   };
   return (
