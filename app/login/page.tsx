@@ -3,31 +3,46 @@ import React, { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
+import Cookies from 'js-cookie';
+
 const Login = () => {
   const [form, setForm] = useState({ email: '', password: '' });
   const router = useRouter();
+
   const handleRegistrationForm = async (e: React.FormEvent<HTMLElement>) => {
     e.preventDefault();
     try {
+      console.log('Attempting to sign in...');
       const signIn = await fetch('http://localhost:4000/api/user/signInUser', {
         method: 'POST',
-        headers: { 'content-type': 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email: form.email,
           hashedPassword: form.password
         })
       });
 
-      if (!signIn) {
-        console.log('Error Signing in');
+      if (!signIn.ok) {
+        console.error('Error signing in:', signIn.statusText);
+        return;
       }
-      console.log(signIn);
+
+      const data = await signIn.json();
+      const token = data.token;
+      console.log('Sign-in successful, received token:', token);
+
+      // Set token in cookie
+      Cookies.set('authToken', token, { secure: true, sameSite: 'Strict', path: '/' });
+      console.log('Token set in cookies.');
+
+      // Redirect to home page
       router.push('/');
+      console.log('Redirecting to home page.');
     } catch (error) {
-      console.log('Form Error', error);
+      console.error('Form Error:', error);
     }
-    console.log(form);
   };
+
   return (
     <div className='border flex justify-center items-center h-screen border-red-500'>
       {/*Left*/}
@@ -41,16 +56,14 @@ const Login = () => {
             <Input
               placeholder='Email'
               value={form.email}
-              onChange={(emailInput) => {
-                setForm({ ...form, email: emailInput.target.value });
-              }}
+              onChange={(emailInput) => setForm({ ...form, email: emailInput.target.value })}
             />
             <Input
               placeholder='Password'
               value={form.password}
-              onChange={(passwordInput) => {
-                setForm({ ...form, password: passwordInput.target.value });
-              }}
+              onChange={(passwordInput) =>
+                setForm({ ...form, password: passwordInput.target.value })
+              }
             />
             <Button type='submit'>Submit</Button>
           </form>
