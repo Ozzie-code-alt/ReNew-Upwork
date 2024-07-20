@@ -1,6 +1,5 @@
 import { NextResponse, NextRequest } from 'next/server';
 import { jwtVerify } from 'jose';
-
 const secret = new TextEncoder().encode(process.env.JWT_SECRET);
 
 export async function middleware(req: NextRequest) {
@@ -20,10 +19,21 @@ export async function middleware(req: NextRequest) {
     if (payload.exp && payload.exp * 1000 < Date.now()) {
       throw new Error('Token has expired');
     }
-
-    // Token is valid, allow the request to proceed
     console.log('Token is valid, proceeding with request...');
-    return NextResponse.next();
+
+    // Type assertion for payload.user
+    if (typeof payload.user === 'object' && payload.user !== null) {
+      const user = payload.user as { name: string; email: string }; // Adjust types as per your payload structure
+      const userName = user.name;
+      console.log('this is name', userName);
+      // Store user data in a custom header
+      const response = NextResponse.next();
+      response.headers.set('X-User-Name', userName);
+
+      return response;
+    } else {
+      throw new Error('Invalid token payload structure');
+    }
   } catch (err) {
     console.error('Token verification failed:', err);
     return NextResponse.redirect('http://localhost:3000/login');
@@ -31,5 +41,5 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/'] // Apply middleware to protected routes
+  matcher: '/' // Apply middleware to protected routes
 };

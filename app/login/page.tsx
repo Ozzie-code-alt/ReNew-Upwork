@@ -31,13 +31,10 @@ const Login = () => {
       const token = data.token;
       console.log('Sign-in successful, received token:', token);
 
-      // Set token in cookie
       Cookies.set('authToken', token, { secure: true, sameSite: 'Strict', path: '/' });
       console.log('Token set in cookies.');
 
-      // Redirect to home page
       router.push('/');
-      console.log('Redirecting to home page.');
     } catch (error) {
       console.error('Form Error:', error);
     }

@@ -1,9 +1,10 @@
 'use client';
 
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-
+import Cookies from 'js-cookie';
 import { cn } from '@/lib/utils';
+import { jwtVerify } from 'jose';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,6 +15,7 @@ import {
   navigationMenuTriggerStyle
 } from '@/components/ui/navigation-menu';
 import { Input } from '@/components/ui/input';
+import jwt, { JwtPayload } from 'jsonwebtoken';
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -53,6 +55,44 @@ const components: { title: string; href: string; description: string }[] = [
 ];
 
 export function Navbar() {
+  const [userName, setUserName] = useState('');
+  const [grabId, setGrabId] = useState<JwtPayload | null>(null);
+
+  useEffect(() => {
+    const grabCookies = Cookies.get('authToken')?.valueOf();
+    if (grabCookies) {
+      const decrypted = jwt.decode(grabCookies as string);
+      if (decrypted && typeof decrypted !== 'string') {
+        setGrabId(decrypted);
+      }
+    }
+  }, []);
+  console.log('this is grabID', grabId?.user.id);
+  useEffect(() => {
+    if (grabId && typeof grabId !== 'undefined') {
+      const fetchUserName = async () => {
+        try {
+          const res = await fetch(`http://localhost:4000/api/user/${grabId?.user.id}`, {
+            method: 'GET',
+            credentials: 'include'
+          });
+
+          if (res.ok) {
+            const data = await res.json();
+
+            setUserName(data.name);
+          } else {
+            console.log('error fetching data');
+          }
+        } catch (error) {
+          console.log('fetch error:', error);
+        }
+      };
+
+      fetchUserName();
+    }
+  }, [grabId]);
+
   return (
     <div className='border flex justify-between   bg-[#FFD966] px-10 rounded-lg items-center  py-10'>
       <div>
@@ -111,6 +151,7 @@ export function Navbar() {
       </div>
       <div>
         <p className='text-4xl'>ReNew</p>
+        Welcome, {userName}
       </div>
       <div className='flex gap-5 items-center'>
         <div className=''>
