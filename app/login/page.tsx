@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
 import Cookies from 'js-cookie';
+import Link from 'next/link';
 
 const Login = () => {
   const [form, setForm] = useState({ email: '', password: '' });
@@ -64,6 +65,13 @@ const Login = () => {
             />
             <Button type='submit'>Submit</Button>
           </form>
+          <div className=' w-[50%]'>
+            <Link href='/sign-up'>
+              <p className='text-gray-500 cursor-pointer'>
+                Dont have an account ? <span className='text-black'>Sign Up</span>.{' '}
+              </p>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

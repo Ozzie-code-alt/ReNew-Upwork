@@ -65,13 +65,6 @@ const SignUp = () => {
             />
             <Button type='submit'>Submit</Button>
           </form>
-          <div className=' w-[50%]'>
-            <Link href='/login'>
-              <p className='text-gray-500 cursor-pointer'>
-                Already have an account ? <span className='text-black'>Sign In</span>.{' '}
-              </p>
-            </Link>
-          </div>
         </div>
       </div>
     </div>

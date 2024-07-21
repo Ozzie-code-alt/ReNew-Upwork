@@ -8,7 +8,7 @@ export async function middleware(req: NextRequest) {
 
   if (!token) {
     console.log('No token found, redirecting to login...');
-    return NextResponse.redirect('http://localhost:3000/login');
+    return NextResponse.redirect('http://localhost:3000/sign-up');
   }
 
   try {
