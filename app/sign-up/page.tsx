@@ -25,7 +25,7 @@ const SignUp = () => {
       if (!SignUpData) {
         console.log('SignUp Error');
       } else {
-        router.push('/');
+        router.push('/login');
       }
       console.log(form);
     } catch (error) {
