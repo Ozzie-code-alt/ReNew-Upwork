@@ -1,6 +1,17 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
+import { UserContext } from '@/providers/UserContext';
 const Cart = () => {
+  const context = useContext(UserContext);
+  if (!context) {
+    throw new Error('SomeComponent must be used within a CurrentUserProvider');
+  }
+
+  const { userID, setUserID } = context;
+
+  const cartCheckout = () => {
+    // Simulate a ID value passed from COntext API
+    setUserID('2');
+  };
   return (
     <section>
       <div className='mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8'>
@@ -19,7 +30,7 @@ const Cart = () => {
                 />
 
                 <div>
-                  <h3 className='text-sm text-gray-900'>Basic Tee 6-Pack</h3>
+                  <h3 className='text-sm text-gray-900'>{userID}</h3>
 
                   <dl className='mt-0.5 space-y-px text-[10px] text-gray-600'>
                     <div>
@@ -117,14 +128,14 @@ const Cart = () => {
                   </span>
                 </div>
 
-                <div className='flex justify-end'>
+                <button className='flex justify-end' onClick={cartCheckout}>
                   <a
                     href='#'
                     className='block rounded bg-gray-700 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600'
                   >
                     Checkout
                   </a>
-                </div>
+                </button>
               </div>
             </div>
           </div>
