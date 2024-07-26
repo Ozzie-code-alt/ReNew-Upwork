@@ -104,30 +104,25 @@ const SignUp = () => {
               aliquam, quibusdam aperiam voluptatum.
             </p>
 
-            <form action='#' className='mt-8 grid grid-cols-6 gap-6'>
+            <form
+              action='#'
+              className='mt-8 grid grid-cols-6 gap-6'
+              onSubmit={handleRegistrationForm}
+            >
               <div className='col-span-6 sm:col-span-3'>
                 <label htmlFor='FirstName' className='block text-sm font-medium text-gray-700'>
-                  First Name
+                  Full Name
                 </label>
 
                 <input
                   type='text'
-                  id='FirstName'
-                  name='first_name'
+                  placeholder='Full Name'
                   className='mt-1 w-full py-2 px-2  rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm'
-                />
-              </div>
-
-              <div className='col-span-6 sm:col-span-3'>
-                <label htmlFor='LastName' className='block text-sm font-medium text-gray-700'>
-                  Last Name
-                </label>
-
-                <input
-                  type='text'
-                  id='LastName'
-                  name='last_name'
-                  className='mt-1 w-full  py-2 px-2  rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm'
+                  value={form.fullName}
+                  onChange={(fullNameInput) => {
+                    setForm({ ...form, fullName: fullNameInput.target.value });
+                  }}
+                  required
                 />
               </div>
 
@@ -139,9 +134,13 @@ const SignUp = () => {
 
                 <input
                   type='email'
-                  id='Email'
-                  name='email'
+                  placeholder='Email'
                   className='mt-1 py-2 px-2 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm'
+                  value={form.email}
+                  onChange={(emailInput) => {
+                    setForm({ ...form, email: emailInput.target.value });
+                  }}
+                  required
                 />
               </div>
 
@@ -153,9 +152,13 @@ const SignUp = () => {
 
                 <input
                   type='password'
-                  id='Password'
-                  name='password'
+                  placeholder='Password'
                   className='mt-1 w-full py-2 px-2  rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm'
+                  value={form.password}
+                  onChange={(passwordInput) => {
+                    setForm({ ...form, password: passwordInput.target.value });
+                  }}
+                  required
                 />
               </div>
 
@@ -207,7 +210,10 @@ const SignUp = () => {
               </div>
 
               <div className='col-span-6 sm:flex sm:items-center sm:gap-4'>
-                <button className='inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500'>
+                <button
+                  type='submit'
+                  className='inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500'
+                >
                   Create an account
                 </button>
 
