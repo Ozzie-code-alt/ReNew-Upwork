@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
 import { cn } from '@/lib/utils';
@@ -23,7 +23,7 @@ import {
 import { Input } from '@/components/ui/input';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import Cart from './Cart';
-
+import { UserContext } from '@/providers/UserContext';
 const components: { title: string; href: string; description: string }[] = [
   {
     title: 'Alert Dialog',
@@ -64,7 +64,12 @@ const components: { title: string; href: string; description: string }[] = [
 export function Navbar() {
   const [userName, setUserName] = useState('');
   const [grabId, setGrabId] = useState<JwtPayload | null>(null);
+  const context = useContext(UserContext);
+  if (!context) {
+    throw new Error('SomeComponent must be used within a CurrentUserProvider');
+  }
 
+  const { userID, setUserID } = context;
   useEffect(() => {
     const grabCookies = Cookies.get('authToken')?.valueOf();
     if (grabCookies) {
@@ -74,6 +79,7 @@ export function Navbar() {
       }
     }
   }, []);
+  setUserID(grabId?.user.id);
   console.log('this is grabID', grabId?.user.id);
   useEffect(() => {
     if (grabId && typeof grabId !== 'undefined') {
