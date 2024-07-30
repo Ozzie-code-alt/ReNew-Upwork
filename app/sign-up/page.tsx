@@ -10,7 +10,7 @@ const SignUp = () => {
   const handleRegistrationForm = async (e: React.FormEvent<HTMLElement>) => {
     e.preventDefault();
     try {
-      const SignUpData = await fetch('http://localhost:4000/api/user/createUser', {
+      const SignUpData = await fetch('https://re-new-upwork.vercel.app/api/user/createUser', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'
