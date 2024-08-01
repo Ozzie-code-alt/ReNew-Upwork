@@ -17,10 +17,13 @@ const Categories = () => {
 
         <div className='mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
           {CATEGORIES.map((value, index) => (
-            <a
+            <Link
               key={index}
               className='block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10'
-              href='#'
+              href={{
+                pathname: `/categories/${encodeURIComponent(index)}`,
+                query: { slug: value.title }
+              }}
             >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -45,7 +48,7 @@ const Categories = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci
                 distinctio alias voluptatum blanditiis laudantium.
               </p>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

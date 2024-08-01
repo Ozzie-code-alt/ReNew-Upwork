@@ -8,7 +8,7 @@ export async function middleware(req: NextRequest) {
 
   if (!token) {
     console.log('No token found, redirecting to login...');
-    return NextResponse.redirect('https://re-new-upwork.vercel.app/sign-up');
+    return NextResponse.redirect('http://localhost:3000/sign-up');
   }
 
   try {
@@ -36,7 +36,7 @@ export async function middleware(req: NextRequest) {
     }
   } catch (err) {
     console.error('Token verification failed:', err);
-    return NextResponse.redirect('https://re-new-upwork.vercel.app/login');
+    return NextResponse.redirect('http://localhost:3000/login');
   }
 }
 
