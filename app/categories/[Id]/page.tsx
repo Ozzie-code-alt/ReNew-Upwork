@@ -1,13 +1,34 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const CategoryPage = ({ params }: { params: { title: string } }) => {
-  const { title } = params;
+type ProductProps = {
+  name: string;
+  description: string;
+  priceInCents: number;
+};
+
+const CategoryPage = ({ params }: { params: { Id: string } }) => {
+  const [product, setProduct] = useState<ProductProps[]>([]);
+  const { Id } = params;
+  console.log('this is ID params', Id);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      await fetch(`http://localhost:4000/api/product/${Id}`)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          setProduct(data);
+        })
+        .catch((error) => console.error(error));
+    };
+    fetchProducts();
+  }, []);
+
   return (
     <section>
       <div className='mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8'>
         <header>
-          <h2 className='text-xl font-bold text-gray-900 sm:text-3xl'>{title}</h2>
+          <h2 className='text-xl font-bold text-gray-900 sm:text-3xl'>{}</h2>
 
           <p className='mt-4 max-w-md text-gray-500'>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque praesentium cumque iure
@@ -313,71 +334,29 @@ const CategoryPage = ({ params }: { params: { title: string } }) => {
 
           <div className='lg:col-span-3'>
             <ul className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
-              <li>
-                <a href='#' className='group block overflow-hidden'>
-                  <img
-                    src='https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
-                    alt=''
-                    className='h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]'
-                  />
+              {product.map((value, index) => (
+                <li key={index}>
+                  <a href='#' className='group block overflow-hidden'>
+                    <img
+                      src='https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
+                      alt=''
+                      className='h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]'
+                    />
 
-                  <div className='relative bg-white pt-3'>
-                    <h3 className='text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4'>
-                      Basic Tee
-                    </h3>
+                    <div className='relative bg-white pt-3'>
+                      <h3 className='text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4'>
+                        {value.name}
+                      </h3>
 
-                    <p className='mt-2'>
-                      <span className='sr-only'> Regular Price </span>
+                      <p className='mt-2'>
+                        <span className='sr-only'> {value.description}</span>
 
-                      <span className='tracking-wider text-gray-900'> £24.00 GBP </span>
-                    </p>
-                  </div>
-                </a>
-              </li>
-
-              <li>
-                <a href='#' className='group block overflow-hidden'>
-                  <img
-                    src='https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
-                    alt=''
-                    className='h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]'
-                  />
-
-                  <div className='relative bg-white pt-3'>
-                    <h3 className='text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4'>
-                      Basic Tee
-                    </h3>
-
-                    <p className='mt-2'>
-                      <span className='sr-only'> Regular Price </span>
-
-                      <span className='tracking-wider text-gray-900'> £24.00 GBP </span>
-                    </p>
-                  </div>
-                </a>
-              </li>
-
-              <li>
-                <a href='#' className='group block overflow-hidden'>
-                  <img
-                    src='https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
-                    alt=''
-                    className='h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]'
-                  />
-
-                  <div className='relative bg-white pt-3'>
-                    <h3 className='text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4'>
-                      Basic Tee
-                    </h3>
-
-                    <p className='mt-2'>
-                      <span className='sr-only'> Regular Price </span>
-
-                      <span className='tracking-wider text-gray-900'> £24.00 GBP </span>
-                    </p>
-                  </div>
-                </a>
-              </li>
+                        <span className='tracking-wider text-gray-900'> {value.priceInCents}</span>
+                      </p>
+                    </div>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

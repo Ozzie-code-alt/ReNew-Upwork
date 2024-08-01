@@ -1,14 +1,14 @@
 export const CATEGORIES = [
   {
-    title: 'Men Apparel',
+    title: 'Healcare',
     imgUrl: '/Categories/Men_Apparel.webp'
   },
   {
-    title: 'Mobile & Gadgets',
+    title: 'Tech',
     imgUrl: '/Categories/Men_Apparel.webp'
   },
   {
-    title: 'Mobile Accesories',
+    title: 'PersonalCare',
     imgUrl: '/Categories/Men_Apparel.webp'
   },
   {
