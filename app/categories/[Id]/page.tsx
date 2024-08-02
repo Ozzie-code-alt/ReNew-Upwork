@@ -1,7 +1,11 @@
 'use client';
+import Item from '@/components/Item';
+import { Modal, ModalBody, ModalContent, ModalTrigger } from '@/components/ui/animatedModal';
 import React, { useEffect, useState } from 'react';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 type ProductProps = {
+  id: number;
   name: string;
   description: string;
   priceInCents: number;
@@ -9,6 +13,7 @@ type ProductProps = {
 
 const CategoryPage = ({ params }: { params: { Id: string } }) => {
   const [product, setProduct] = useState<ProductProps[]>([]);
+  const notify = () => toast('Added to cart');
   const { Id } = params;
   console.log('this is ID params', Id);
   useEffect(() => {
@@ -16,7 +21,7 @@ const CategoryPage = ({ params }: { params: { Id: string } }) => {
       await fetch(`http://localhost:4000/api/product/${Id}`)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
+          console.log('this is data', data);
           setProduct(data);
         })
         .catch((error) => console.error(error));
@@ -336,25 +341,42 @@ const CategoryPage = ({ params }: { params: { Id: string } }) => {
             <ul className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
               {product.map((value, index) => (
                 <li key={index}>
-                  <a href='#' className='group block overflow-hidden'>
-                    <img
-                      src='https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
-                      alt=''
-                      className='h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]'
-                    />
+                  <Modal>
+                    <a href='#' className='group block overflow-hidden'>
+                      <ModalTrigger>
+                        <img
+                          src='https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
+                          alt=''
+                          className='h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]'
+                        />
 
-                    <div className='relative bg-white pt-3'>
-                      <h3 className='text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4'>
-                        {value.name}
-                      </h3>
+                        <div className='relative bg-white pt-3'>
+                          <h3 className='text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4'>
+                            {value.name}
+                          </h3>
 
-                      <p className='mt-2'>
-                        <span className='sr-only'> {value.description}</span>
+                          <p className='mt-2'>
+                            <span className='sr-only'> {value.description}</span>
 
-                        <span className='tracking-wider text-gray-900'> {value.priceInCents}</span>
-                      </p>
-                    </div>
-                  </a>
+                            <span className='tracking-wider text-gray-900'>
+                              {' '}
+                              {value.priceInCents}
+                            </span>
+                          </p>
+                        </div>
+                      </ModalTrigger>
+                      <ModalBody>
+                        <ModalContent>
+                          <Item
+                            name={value.name}
+                            productId={value.id}
+                            description={value.description}
+                          />
+                        </ModalContent>
+                      </ModalBody>
+                    </a>
+                  </Modal>
+                  <ToastContainer />
                 </li>
               ))}
             </ul>
