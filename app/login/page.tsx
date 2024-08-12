@@ -12,9 +12,10 @@ const Login = () => {
 
   const handleRegistrationForm = async (e: React.FormEvent<HTMLElement>) => {
     e.preventDefault();
+    console.log(process.env.NEXT_PUBLIC_LOCAL_URL);
     try {
       console.log('Attempting to sign in...');
-      const signIn = await fetch(`${process.env.LOCAL_URL}/api/user/signInUser`, {
+      const signIn = await fetch(`${process.env.NEXT_PUBLIC_LOCAL_URL}/api/user/signInUser`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

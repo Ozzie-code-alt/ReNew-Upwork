@@ -18,7 +18,7 @@ const CategoryPage = ({ params }: { params: { Id: string } }) => {
   console.log('this is ID params', Id);
   useEffect(() => {
     const fetchProducts = async () => {
-      await fetch(`http://localhost:4000/api/product/${Id}`)
+      await fetch(`${process.env.NEXT_PUBLIC_LOCAL_URL}/api/product/${Id}`)
         .then((response) => response.json())
         .then((data) => {
           console.log('this is data', data);

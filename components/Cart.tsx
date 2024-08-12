@@ -19,7 +19,7 @@ const Cart = () => {
 
   useEffect(() => {
     const fetchCartData = () => {
-      fetch(`http://localhost:4000/api/cart/${userID}`)
+      fetch(`${process.env.NEXT_PUBLIC_LOCAL_URL}/api/cart/${userID}`)
         .then((response) => {
           if (!response.ok) {
             throw new Error('Network response was not ok');
