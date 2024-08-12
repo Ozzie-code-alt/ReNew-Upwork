@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
     try {
       console.log('Attempting to sign in...');
-      const signIn = await fetch('http://localhost:4000/api/user/signInUser', {
+      const signIn = await fetch(`${process.env.LOCAL_URL}/api/user/signInUser`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

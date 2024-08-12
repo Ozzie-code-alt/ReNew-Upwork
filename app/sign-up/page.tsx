@@ -9,8 +9,9 @@ const SignUp = () => {
   const [form, setForm] = useState({ fullName: '', email: '', password: '' });
   const handleRegistrationForm = async (e: React.FormEvent<HTMLElement>) => {
     e.preventDefault();
+    console.log(process.env.ENV_IP);
     try {
-      const SignUpData = await fetch('http://localhost:4000/api/user/createUser', {
+      const SignUpData = await fetch(`${process.env.ENV_IP}/api/user/createUser`, {
         method: 'POST',
         headers: {
           'content-type': 'application/json'
