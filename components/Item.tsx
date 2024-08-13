@@ -1,5 +1,6 @@
 'use client';
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
+import { UserContext } from '@/providers/UserContext';
 
 type ItemProps = {
   name: string;
@@ -7,10 +8,18 @@ type ItemProps = {
   productId: number;
 };
 const Item = ({ name, description, productId }: ItemProps) => {
+  const context = useContext(UserContext);
+  if (!context) {
+    throw new Error('SomeComponent must be used within a CurrentUserProvider');
+  }
+
+  const { userID } = context;
+
+  // console.log('this is userID ', userID);
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      const data = await fetch('http://localhost:4000/api/cart/', {
+      const data = await fetch(`http://localhost:4000/api/cart/${userID}`, {
         method: 'POST',
         headers: {
           'content-type': 'application/json'

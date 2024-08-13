@@ -4,22 +4,8 @@ import React, { useEffect, useState, useContext } from 'react';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
 import { cn } from '@/lib/utils';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle
-} from '@/components/ui/navigation-menu';
-import {
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalFooter,
-  ModalTrigger
-} from '@/components/ui/animatedModal';
+import { NavigationMenuLink } from '@/components/ui/navigation-menu';
+import { Modal, ModalBody, ModalContent, ModalTrigger } from '@/components/ui/animatedModal';
 import { Input } from '@/components/ui/input';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import Cart from './Cart';
@@ -70,7 +56,7 @@ export function Navbar() {
     throw new Error('SomeComponent must be used within a CurrentUserProvider');
   }
 
-  const { setUserID } = context;
+  const { setUserID, userID } = context;
   useEffect(() => {
     const grabCookies = Cookies.get('authToken')?.valueOf();
     if (grabCookies) {
@@ -82,6 +68,7 @@ export function Navbar() {
   }, []);
   setUserID(grabId?.user.id);
   console.log('this is grabID', grabId?.user.id);
+  console.log('user ID from NAVBAR', userID);
   useEffect(() => {
     if (grabId && typeof grabId !== 'undefined') {
       const fetchUserName = async () => {
