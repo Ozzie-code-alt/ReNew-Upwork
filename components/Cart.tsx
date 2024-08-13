@@ -17,6 +17,7 @@ const Cart = () => {
 
   const { userID } = context;
 
+  console.log('this is userr ID', userID);
   useEffect(() => {
     const fetchCartData = () => {
       fetch(`${process.env.NEXT_PUBLIC_LOCAL_URL}/api/cart/${userID}`)

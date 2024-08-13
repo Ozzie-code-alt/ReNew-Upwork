@@ -10,13 +10,13 @@ const Item = ({ name, description, productId }: ItemProps) => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      const data = await fetch('http://localhost:4000/api/cart/Addcart', {
+      const data = await fetch('http://localhost:4000/api/cart/', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'
         },
         body: JSON.stringify({
-          userId: 4,
+          userId: 5,
           totalPrice: 1000,
           productId: productId
         })
@@ -25,7 +25,6 @@ const Item = ({ name, description, productId }: ItemProps) => {
       if (!data) {
         console.log('No Data');
       }
-      console.log('Added to Cart');
     } catch (error) {
       console.error('error in adding to cart', error);
     }
