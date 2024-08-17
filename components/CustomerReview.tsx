@@ -67,9 +67,11 @@ const CustomerReview = () => {
               </div>
 
               <p className='mt-4 text-gray-700'>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt,
-                a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius
-                accusamus error officiis atque voluptates magnam!
+                I&apos;ve been using this product for the past six months, and it has completely
+                exceeded my expectations. The quality is top-notch, and the customer service is
+                equally impressive. I had a minor issue, and their team resolved it within hours.
+                Highly recommend to anyone looking for a reliable and effective solution. Definitely
+                worth every penny!
               </p>
             </blockquote>
           </div>
@@ -79,7 +81,7 @@ const CustomerReview = () => {
               <div className='flex items-center gap-4'>
                 <img
                   alt=''
-                  src='https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80'
+                  src='https://images.unsplash.com/photo-1508184964240-ee96bb9677a7?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                   className='size-14 rounded-full object-cover'
                 />
 
@@ -127,13 +129,15 @@ const CustomerReview = () => {
                     </svg>
                   </div>
 
-                  <p className='mt-0.5 text-lg font-medium text-gray-900'>Paul Starr</p>
+                  <p className='mt-0.5 text-lg font-medium text-gray-900'>Samantha Lee</p>
                 </div>
               </div>
 
               <p className='mt-4 text-gray-700'>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad mollitia rerum quo unde
-                neque atque molestias quas pariatur! Sint, maxime?
+                Amazing experience from start to finish. The product is sturdy, well-made, and very
+                easy to use. I&apos;ve seen significant improvements since I started using it.
+                Customer support was responsive and friendly, making the whole experience even
+                better. I can&apos;t recommend this product enough!
               </p>
             </blockquote>
           </div>
@@ -143,7 +147,7 @@ const CustomerReview = () => {
               <div className='flex items-center gap-4'>
                 <img
                   alt=''
-                  src='https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80'
+                  src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                   className='size-14 rounded-full object-cover'
                 />
 
@@ -191,14 +195,15 @@ const CustomerReview = () => {
                     </svg>
                   </div>
 
-                  <p className='mt-0.5 text-lg font-medium text-gray-900'>Paul Starr</p>
+                  <p className='mt-0.5 text-lg font-medium text-gray-900'>Michael Brown</p>
                 </div>
               </div>
 
               <p className='mt-4 text-gray-700'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit esse
-                delectus, maiores fugit, reiciendis culpa inventore sint accusantium libero dolore
-                eos quasi a ex aliquam molestiae. Tenetur hic delectus maxime.
+                I was a bit skeptical at first, but after using it for a few weeks, I&apos;m
+                completely sold. The performance is unmatched, and it has made my daily routine so
+                much easier. The support team was there to guide me through setup, which was very
+                appreciated. Five stars well deserved!
               </p>
             </blockquote>
           </div>
@@ -208,7 +213,7 @@ const CustomerReview = () => {
               <div className='flex items-center gap-4'>
                 <img
                   alt=''
-                  src='https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80'
+                  src='https://images.unsplash.com/photo-1583243552802-94ccb4200150?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                   className='size-14 rounded-full object-cover'
                 />
 
@@ -256,12 +261,15 @@ const CustomerReview = () => {
                     </svg>
                   </div>
 
-                  <p className='mt-0.5 text-lg font-medium text-gray-900'>Paul Starr</p>
+                  <p className='mt-0.5 text-lg font-medium text-gray-900'>Jessica Taylor</p>
                 </div>
               </div>
 
               <p className='mt-4 text-gray-700'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, fuga?
+                This is by far the best product I&apos;ve purchased this year. The quality is
+                outstanding, and it does exactly what it promises. The customer service was superb;
+                they went above and beyond to ensure I was satisfied. A fantastic investment that
+                I&apos;m happy I made.
               </p>
             </blockquote>
           </div>
@@ -271,7 +279,7 @@ const CustomerReview = () => {
               <div className='flex items-center gap-4'>
                 <img
                   alt=''
-                  src='https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80'
+                  src='https://plus.unsplash.com/premium_photo-1710364762759-75345373d697?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                   className='size-14 rounded-full object-cover'
                 />
 
@@ -319,16 +327,15 @@ const CustomerReview = () => {
                     </svg>
                   </div>
 
-                  <p className='mt-0.5 text-lg font-medium text-gray-900'>Paul Starr</p>
+                  <p className='mt-0.5 text-lg font-medium text-gray-900'>David Martinez</p>
                 </div>
               </div>
 
               <p className='mt-4 text-gray-700'>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate officia natus
-                blanditiis rerum incidunt ex autem repudiandae doloribus eveniet quia? Culpa commodi
-                quae atque perspiciatis? Provident, magni beatae saepe porro aspernatur facere neque
-                sunt possimus assumenda perspiciatis aperiam quisquam animi libero voluptatem fuga.
-                Repudiandae, facere? Nemo reprehenderit quas ratione quis.
+                I&apos;ve been using this for a while now, and I&apos;m extremely happy with my
+                purchase. The product is durable, and its performance is top-notch. The team behind
+                this product clearly cares about their customers, as they were very helpful with all
+                my inquiries. Highly recommend!
               </p>
             </blockquote>
           </div>
@@ -338,7 +345,7 @@ const CustomerReview = () => {
               <div className='flex items-center gap-4'>
                 <img
                   alt=''
-                  src='https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80'
+                  src='https://images.unsplash.com/photo-1506863530036-1efeddceb993?q=80&w=1944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                   className='size-14 rounded-full object-cover'
                 />
 
@@ -386,13 +393,15 @@ const CustomerReview = () => {
                     </svg>
                   </div>
 
-                  <p className='mt-0.5 text-lg font-medium text-gray-900'>Paul Starr</p>
+                  <p className='mt-0.5 text-lg font-medium text-gray-900'>Emily Davis</p>
                 </div>
               </div>
 
               <p className='mt-4 text-gray-700'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, rerum. Nobis laborum
-                praesentium necessitatibus vero.
+                Excellent product and even better service. I was pleasantly surprised by how easy it
+                was to set up and start using. The quality is far superior to other similar products
+                I&apos;ve tried. The customer service team was also extremely responsive and
+                helpful. A must-buy!
               </p>
             </blockquote>
           </div>
@@ -402,7 +411,7 @@ const CustomerReview = () => {
               <div className='flex items-center gap-4'>
                 <img
                   alt=''
-                  src='https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80'
+                  src='https://images.unsplash.com/photo-1583243567239-3727551e0c59?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                   className='size-14 rounded-full object-cover'
                 />
 
@@ -450,14 +459,15 @@ const CustomerReview = () => {
                     </svg>
                   </div>
 
-                  <p className='mt-0.5 text-lg font-medium text-gray-900'>Paul Starr</p>
+                  <p className='mt-0.5 text-lg font-medium text-gray-900'>Chris Wilson</p>
                 </div>
               </div>
 
               <p className='mt-4 text-gray-700'>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores quaerat quasi ipsa
-                repellendus quam! Beatae pariatur quia distinctio fugit repellendus repudiandae
-                nostrum consectetur quibusdam quo.
+                This product has been a wonderful addition to my daily routine. It&apos;s
+                well-designed, easy to use, and delivers on its promises. I had a few questions, and
+                the customer service team was quick to respond and very helpful. I&apos;m very
+                pleased with my purchase!
               </p>
             </blockquote>
           </div>
@@ -467,7 +477,7 @@ const CustomerReview = () => {
               <div className='flex items-center gap-4'>
                 <img
                   alt=''
-                  src='https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80'
+                  src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                   className='size-14 rounded-full object-cover'
                 />
 
@@ -515,12 +525,15 @@ const CustomerReview = () => {
                     </svg>
                   </div>
 
-                  <p className='mt-0.5 text-lg font-medium text-gray-900'>Paul Starr</p>
+                  <p className='mt-0.5 text-lg font-medium text-gray-900'>Laura Nguyen</p>
                 </div>
               </div>
 
               <p className='mt-4 text-gray-700'>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, modi!
+                I&apos;m thoroughly impressed with this product. It&apos; made with high-quality
+                materials and works perfectly. The customer service was equally impressive—they
+                answered all my questions quickly and professionally. I will definitely be buying
+                from this company again!
               </p>
             </blockquote>
           </div>
@@ -530,7 +543,7 @@ const CustomerReview = () => {
               <div className='flex items-center gap-4'>
                 <img
                   alt=''
-                  src='https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80'
+                  src='https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                   className='size-14 rounded-full object-cover'
                 />
 
@@ -578,13 +591,15 @@ const CustomerReview = () => {
                     </svg>
                   </div>
 
-                  <p className='mt-0.5 text-lg font-medium text-gray-900'>Paul Starr</p>
+                  <p className='mt-0.5 text-lg font-medium text-gray-900'>John Snow</p>
                 </div>
               </div>
 
               <p className='mt-4 text-gray-700'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam numquam, unde
-                molestiae commodi temporibus dicta.
+                Top-quality product with fantastic performance. I&apos;lve used it daily since I got
+                it, and it has never let me down. The customer support team was excellent—they
+                provided quick and thorough assistance. I would highly recommend this to anyone
+                looking for something reliable.
               </p>
             </blockquote>
           </div>

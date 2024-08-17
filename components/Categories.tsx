@@ -10,8 +10,9 @@ const Categories = () => {
           <h2 className='text-3xl font-bold sm:text-4xl'>Categories</h2>
 
           <p className='mt-4 text-gray-300'>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur aliquam doloribus
-            nesciunt eos fugiat. Vitae aperiam fugit consequuntur saepe laborum.
+            Discover a wide range of products tailored to your needs. From innovative tech to
+            essential home and personal care, explore our curated categories to find exactly what
+            you&apos;re looking for.
           </p>
         </div>
 
@@ -45,10 +46,7 @@ const Categories = () => {
 
               <h2 className='mt-4 text-xl font-bold text-white'>{value.title}</h2>
 
-              <p className='mt-1 text-sm text-gray-300'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci
-                distinctio alias voluptatum blanditiis laudantium.
-              </p>
+              <p className='mt-1 text-sm text-gray-300'>{value.description}</p>
             </Link>
           ))}
         </div>
